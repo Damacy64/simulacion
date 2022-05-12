@@ -15,24 +15,8 @@ public class NumerosPseudoaleatorios {
         opcion = leer.nextInt();
         switch (opcion) {
             case 1:
-                System.out.println("Metodo Congruencial\nEliga una opcion\n1.Ingresar datos manualmente\n2.Generar datos aleatorios");
-                opcion = leer.nextInt();
-                if (opcion == 1) {
-                    int semilla, modulo;
-                    System.out.println("Metodo Congruencial");
-                    System.out.println("Ingrese el valor de la semilla");
-                    semilla = leer.nextInt();
-                    System.out.println("Ingrese el valor del modulo");
-                    modulo = leer.nextInt();
-                    MetodoCongruencial metodo1 = new MetodoCongruencial(semilla, modulo);
-                } else if (opcion == 2) {
-                    int semilla, modulo;
-                    System.out.println("Metodo Congruencial");
-                    semilla = (int) (Math.random() * 100);
-                    modulo = (int) (Math.random() * 100);
-                    MetodoCongruencial metodo1 = new MetodoCongruencial(semilla, modulo);
-                }
-                break;
+                    MetodoCongruencial metodo1 = new MetodoCongruencial();
+                    break;
             case 2:
                 System.out.println("Metodo Potencias Sucesivas\nEliga una opcion\n1.Ingresar datos manualmente\n2.Generar datos aleatorios");
                 opcion = leer.nextInt();
