@@ -11,7 +11,8 @@ public class NumerosPseudoaleatorios {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         int opcion;
-        System.out.println("Eliga una opcion \n1.Metodo Congruencial\n2.Metodo Potencias Sucesivas\n3.Metodo Aditivo");
+        System.out.println("Eliga una opcion \n1.Metodo Congruencial\n2.Metodo Potencias Sucesivas\n3.Metodo Aditivo"+
+                "\n4.Metodo Mixto Congruencias\n5.Metodo Multiplicativo Binario\n6.Metodo Multiplicativo Decimal");
         opcion = leer.nextInt();
         switch (opcion) {
             case 1:
@@ -61,12 +62,80 @@ public class NumerosPseudoaleatorios {
                     MetodoAditivo metodo3 = new MetodoAditivo(ni, modulo, semilla);
                 }
                 break;
+            case 4:
+                System.out.println("Metodo Mixto Congruencias\nEliga una opcion\n1.Ingresar datos manualmente\n2.Generar datos aleatorios");
+                opcion = leer.nextInt();
+                if (opcion == 1){
+                    System.out.println("Metodo Mixto Congruencias");
+                    int a, c, semilla, modulo;
+                    System.out.println("Ingrese el valor de la constante a");
+                    a = leer.nextInt();
+                    System.out.println("Ingrese el valor de la constante c");
+                    c = leer.nextInt();
+                    System.out.println("Ingrese el valor de la semilla");
+                    semilla = leer.nextInt();
+                    System.out.println("Ingrese el valor del modulo");
+                    modulo = leer.nextInt();
+                    MetodoMixtoCongruencias metodo4 = new MetodoMixtoCongruencias(a,c,semilla,modulo);
+                } else if (opcion == 2){
+                    System.out.println("Metodo Mixto Congruencias");
+                    int a, c, semilla, modulo;
+                    a = (int) (Math.random()*100);
+                    c = (int) (Math.random()*100);
+                    semilla = (int) (Math.random()*100);
+                    modulo = (int) (Math.random()*100);
+                    MetodoMixtoCongruencias metodo4 = new MetodoMixtoCongruencias(a,c,semilla,modulo);
+                }
+                break;
+            case 5:
+                System.out.println("Metodo Multiplicativo Binario\nEliga una opcion\n1.Ingresar datos manualmente\n2.Generar datos aleatorios");
+                opcion = leer.nextInt();
+                if (opcion == 1){
+                    System.out.println("Metodo Multiplicativo Binario");
+                    int t, semilla, b, contador;
+                    System.out.println("Ingrese el valor de t");
+                    t = leer.nextInt();
+                    System.out.println("Ingrese el valor de la semilla");
+                    semilla = leer.nextInt();
+                    System.out.println("Ingrese el valor de b");
+                    b = leer.nextInt();
+                    System.out.println("¿Cuantos numeros desea generar?");
+                    contador = leer.nextInt();
+                    MetodoMultiplicativoBinario metodo5 = new MetodoMultiplicativoBinario(t,semilla,b, contador);
+                } else if (opcion == 2){
+                    System.out.println("Metodo Multiplicativo Binario");
+                }
+                break;
+            case 6:
+                System.out.println("Metodo Multiplicativo Decimal\nEliga una opcion\n1.Ingresar datos manualmente\n2.Generar datos aleatorios");
+                opcion = leer.nextInt();
+                if (opcion == 1){
+                    System.out.println("Metodo Multiplicativo Decimal");
+                    int a, semilla, modulo, contador;
+                    System.out.println("Ingrese el valor de a");
+                    a = leer.nextInt();
+                    System.out.println("Ingrese el valor de la semilla");
+                    semilla = leer.nextInt();
+                    System.out.println("Ingrese el valor del modulo");
+                    modulo = leer.nextInt();
+                    System.out.println("¿Cuantos numeros desea generar?");
+                    contador = leer.nextInt();
+                    MetodoMultiplicativoDecimal metodo6 = new MetodoMultiplicativoDecimal(a, semilla, modulo, contador);
+                } else if (opcion == 2){
+                    System.out.println("Metodo Multiplicativo Decimal");
+                    int a, semilla, modulo,contador;
+                    System.out.println("¿Cuantos numeros desea generar?");
+                    contador = leer.nextInt();
+                    a = (int) (Math.random()*100);
+                    semilla = (int) (Math.random()*100);
+                    modulo = (int) (Math.random()*100);
+                    MetodoMultiplicativoDecimal metodo6 = new MetodoMultiplicativoDecimal(a, semilla, modulo, contador);
+                }
+                break;
             default:
                 System.out.println("Error en la opcion");
                 break;
         }
-        // System.out.println("Metodo Mixto Congruencias");
-        // MetodoMixtoCongruencias metodo4 = new MetodoMixtoCongruencias(17, 11, 7, 19);
     }
 
 }
