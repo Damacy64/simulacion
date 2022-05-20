@@ -104,6 +104,13 @@ public class NumerosPseudoaleatorios {
                     MetodoMultiplicativoBinario metodo5 = new MetodoMultiplicativoBinario(t,semilla,b, contador);
                 } else if (opcion == 2){
                     System.out.println("Metodo Multiplicativo Binario");
+                    int t, semilla, b, contador;
+                    System.out.println("¿Cuantos numeros desea generar?");
+                    contador = leer.nextInt();
+                    t = (int) (Math.random()*50);
+                    semilla = (int) (Math.random()*100);
+                    b = (int) (Math.random()*30);
+                    MetodoMultiplicativoBinario metodo5 = new MetodoMultiplicativoBinario(t,semilla,b, contador);
                 }
                 break;
             case 6:

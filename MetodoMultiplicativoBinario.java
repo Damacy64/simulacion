@@ -9,34 +9,45 @@ package simulacion;
  * @author pzx64
  */
 public class MetodoMultiplicativoBinario {
+
     int t, semilla, b, contador;
     float resultado;
-    public MetodoMultiplicativoBinario(int t, int semilla, int b, int contador){
+
+    public MetodoMultiplicativoBinario(int t, int semilla, int b, int contador) {
         this.t = t;
         this.semilla = semilla;
-        this.b = b;
+        this.b = (int) Math.pow(b, 2);
         this.contador = contador;
-        int numero;
+        int a = (8 * t) + semilla;
+        int numero, modulo, contador2 = 4;
         String binario = "";
-        int a = (8*t)+semilla;
-        for(;contador > 0; contador--){
+        System.out.println("valores t semi b " + t + " " + semilla+ " " + b);
+        for (; contador > 0; contador--) {
             numero = a * semilla;
-            if(numero > 0){
-                while(numero > 0){
-                    if(numero%2 == 0){
-                        binario = "0" + binario;
-                    } else{
-                        binario = "1" + binario;
-                    }
-                    numero = (int) numero/2;
-                }
-            } else if (numero == 0){
-                binario = "0";
-            } else{
-                binario = "No se puede convertir el numero.";
+            //pasa de decimal a binario
+            while (contador2 > 0) {
+                modulo = (numero % 2);
+                binario = modulo + binario;
+                numero = numero / 2;
+                contador2--;
             }
-            System.out.println("El numero convertido a binario es: " + binario);
-            int nbinario = Integer.parseInt(binario);
+            contador2 = 4;
+            System.out.println(binario);
+            //pasa de binario a decimal
+            int binarioint = Integer.parseInt(binario);
+            binario = "";
+            int exponente = 0;
+            int decimal = 0;
+            while (binarioint != 0) {
+                int digito = binarioint % 10;
+                decimal = decimal + digito * (int) Math.pow(2, exponente);
+                exponente++;
+                binarioint = binarioint / 10;
+            }
+            System.out.println("Decimal: " + decimal);
+            semilla = decimal;
+            resultado = ((float)decimal /(float) this.b);
+            System.out.println("resultado: " + resultado);
         }
     }
 }
