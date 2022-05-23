@@ -21,7 +21,7 @@ public class MetodoMultiplicativoDecimal {
                 resultado =(float) (multiplicacion/modulo)/modulo;
             } else {
                 semilla = a * semilla;
-                resultado = (float) (semilla/modulo);
+                resultado = ((float)semilla/ (float)modulo);
             }
             System.out.println(resultado);
         }
