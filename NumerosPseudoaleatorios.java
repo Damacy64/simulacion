@@ -144,9 +144,20 @@ public class NumerosPseudoaleatorios {
                 System.out.println("Metodo Centenas\nEliga una opcion\n1.Ingresar datos manualmente\n2.Generar datos aleatorios");
                 opcion = leer.nextInt();
                 if(opcion == 1){
-                    
+                    int semilla, contador;
+                    System.out.println("Ingrese el valor de la semilla");
+                    semilla = leer.nextInt();
+                    System.out.println("¿Cuantos numeros desea generar?");
+                    contador = leer.nextInt();
+                    MetodoCentenas metodo7 = new MetodoCentenas(semilla, contador);
+                    metodo7.Metodo();
                 } else if (opcion == 2){
-                    
+                    int semilla, contador;
+                    semilla = (int) (Math.random()*1000);
+                    System.out.println("¿Cuantos numeros desea generar?");
+                    contador = leer.nextInt();
+                    MetodoCentenas metodo7 = new MetodoCentenas(semilla, contador);
+                    metodo7.Metodo();
                 }
                 break;
             case 8:
