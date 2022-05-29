@@ -34,10 +34,4 @@ public class MetodoCuadradosMedios {
             System.out.println(resultado);
         }
     }
-    
-    /*public static void main(String[] args) {
-        MetodoCuadradosMedios metodo = new MetodoCuadradosMedios(143, 10);
-        metodo.Metodo();
-    }
-    */
 }
