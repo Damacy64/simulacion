@@ -5,8 +5,8 @@ package simulacion;
  * @author pzx64
  */
 public class MetodoCuadradosMedios {
-    int semilla, contador,nsemilla;
-    float resultado=0;
+    int semilla, contador=0;
+    String resultado="";
     
     public MetodoCuadradosMedios(int semilla, int contador){
         this.contador = contador;
@@ -14,21 +14,30 @@ public class MetodoCuadradosMedios {
     }
     
     public int NuevaSemilla(){
+        int nsemilla;
         semilla = semilla*semilla;
         String Ssemilla = Integer.toString(semilla);
         int longitud = Ssemilla.length()-1;
-        nsemilla = Integer.parseInt(Ssemilla.substring(1, longitud));
+        if (longitud > 5){
+            nsemilla = Integer.parseInt(Ssemilla.substring(3, longitud));
+        } else {
+            nsemilla = semilla;
+        }
         return nsemilla;
     }
     
-    public float Metodo(){
-        int nsemilla = semilla^2;
-        
-        return resultado;
+    public void Metodo(){
+        int aux;
+        for(;contador > 0;contador--){
+            aux = NuevaSemilla();
+            resultado = "0." + aux;
+            System.out.println(resultado);
+        }
     }
     
-    public static void main(String[] args) {
-        MetodoCuadradosMedios metodo = new MetodoCuadradosMedios(38809, 0);
-        System.out.println(metodo.NuevaSemilla());
+    /*public static void main(String[] args) {
+        MetodoCuadradosMedios metodo = new MetodoCuadradosMedios(143, 10);
+        metodo.Metodo();
     }
+    */
 }

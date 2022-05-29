@@ -12,7 +12,8 @@ public class NumerosPseudoaleatorios {
         Scanner leer = new Scanner(System.in);
         int opcion;
         System.out.println("Eliga una opcion \n1.Metodo Congruencial\n2.Metodo Potencias Sucesivas\n3.Metodo Aditivo"+
-                "\n4.Metodo Mixto Congruencias\n5.Metodo Multiplicativo Binario\n6.Metodo Multiplicativo Decimal");
+                "\n4.Metodo Mixto Congruencias\n5.Metodo Multiplicativo Binario\n6.Metodo Multiplicativo Decimal\n7.Metodo Centenas" +
+                "\n8.Metodo Cuadrados Medios");
         opcion = leer.nextInt();
         switch (opcion) {
             case 1:
@@ -137,6 +138,35 @@ public class NumerosPseudoaleatorios {
                     semilla = (int) (Math.random()*100);
                     modulo = (int) (Math.random()*100);
                     MetodoMultiplicativoDecimal metodo6 = new MetodoMultiplicativoDecimal(a, semilla, modulo, contador);
+                }
+                break;
+            case 7:
+                System.out.println("Metodo Centenas\nEliga una opcion\n1.Ingresar datos manualmente\n2.Generar datos aleatorios");
+                opcion = leer.nextInt();
+                if(opcion == 1){
+                    
+                } else if (opcion == 2){
+                    
+                }
+                break;
+            case 8:
+                System.out.println("Metodo Cuadrados Medios\nEliga una opcion\n1.Ingresar datos manualmente\n2.Generar datos aleatorios");
+                opcion = leer.nextInt();
+                if(opcion == 1){
+                    int semilla, contador;
+                    System.out.println("Ingrese el valor de la semilla");
+                    semilla = leer.nextInt();
+                    System.out.println("¿Cuantos numeros desea generar?");
+                    contador = leer.nextInt();
+                    MetodoCuadradosMedios metodo8 = new MetodoCuadradosMedios(semilla, contador);
+                    metodo8.Metodo();
+                } else if (opcion == 2){
+                    int semilla, contador;
+                    semilla = (int) (Math.random() * 1000);
+                    System.out.println("¿Cuantos numeros desea generar?");
+                    contador = leer.nextInt();
+                    MetodoCuadradosMedios metodo8 = new MetodoCuadradosMedios(semilla, contador);
+                    metodo8.Metodo();
                 }
                 break;
             default:
